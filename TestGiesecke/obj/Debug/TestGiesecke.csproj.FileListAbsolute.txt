@@ -1,0 +1,4 @@
+c:\my documents\visual studio 2015\Projects\TestGiesecke\TestGiesecke\bin\Debug\TestGiesecke.dll
+c:\my documents\visual studio 2015\Projects\TestGiesecke\TestGiesecke\bin\Debug\TestGiesecke.pdb
+c:\my documents\visual studio 2015\Projects\TestGiesecke\TestGiesecke\obj\Debug\TestGiesecke.dll
+c:\my documents\visual studio 2015\Projects\TestGiesecke\TestGiesecke\obj\Debug\TestGiesecke.pdb

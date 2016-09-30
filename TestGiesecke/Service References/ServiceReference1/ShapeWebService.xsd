@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="displayMessage" type="tns:displayMessage" />
+  <xs:element name="displayMessageResponse" type="tns:displayMessageResponse" />
+  <xs:element name="displayWarning" type="tns:displayWarning" />
+  <xs:element name="displayWarningResponse" type="tns:displayWarningResponse" />
+  <xs:element name="getParameters" type="tns:getParameters" />
+  <xs:element name="getParametersResponse" type="tns:getParametersResponse" />
+  <xs:complexType name="displayMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayMessageResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getParameters">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getParametersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayWarning">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayWarningResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>
