@@ -6,13 +6,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace test_accessories___selectionh
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct CoverProvisionStruct
     {
-        [MarshalAs(UnmanagedType.U4)]
         public UInt32 id;
         public unsafe IntPtr code;
         public unsafe IntPtr description;
@@ -26,28 +26,34 @@ namespace test_accessories___selectionh
     }
 
 
-    class ImportCoverProvision
-    {
-        public int id { get; set; }
-        public string description { get; set; }
-        public string code { get; set; }
-    }
-
     public class CoverProvision
     {
         public int id { get; set; } = 123;
         public string description { get; set; } = "provision description";
         public string code { get; set; } = "ZBxxxxxx";
+
         public CoverProvision()
-        { }
+        {}
 
         public CoverProvision(string inputName)
         {
-            ImportCoverProvision input = JsonConvert.DeserializeObject<ImportCoverProvision>(File.ReadAllText(inputName));
+            CoverProvision input = JsonConvert.DeserializeObject<CoverProvision>(File.ReadAllText(inputName));
             this.id = input.id;
             this.description = input.description;
             this.code = input.code;
         }
+
+        public unsafe CoverProvision (CoverProvisionStruct * inputPtr)
+        {
+            CoverProvisionStruct input = new CoverProvisionStruct();
+            IntPtr pnt = (IntPtr)inputPtr;
+            try { input = (CoverProvisionStruct)Marshal.PtrToStructure(pnt, typeof(CoverProvisionStruct)); }
+            catch (Exception ex) { MessageBox.Show("hello " + ex.ToString()); }
+            id = Convert.ToInt32(input.id);
+            description = Marshal.PtrToStringAnsi(input.description);
+            code = Marshal.PtrToStringAnsi(input.code);
+        }
+
 
         public CoverProvisionStruct toStruct()
         {

@@ -6,13 +6,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace test_accessories___selectionh
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct CoverAccessoryStruc
     {
-        [MarshalAs(UnmanagedType.U4)]
         public UInt32 id;
         public unsafe int* testArray;
         public unsafe IntPtr code;
@@ -35,17 +35,6 @@ namespace test_accessories___selectionh
     }
 
 
-    class ImportCoverAccessory
-    {
-        public int id { get; set; }
-        public string description { get; set; }
-        public string code { get; set; }
-        public string picture { get; set; }
-        public int distanceToEdge { get; set; }
-        public string defaultProvision { get; set; }
-        public string[] acceptedProvisionCodes { get; set; }
-    }
-
     public class CoverAccessory
     {
         public int id { get; set; } = 456;
@@ -56,12 +45,15 @@ namespace test_accessories___selectionh
         public CoverProvision coverProvision { get; set; } = new CoverProvision();
         public string[] acceptedProvisionCodes { get; set; }
         public int[] testArray = new int[3] { 11, 22, 33 };
+        public string defaultProvision { get; set; }
+
+
         public CoverAccessory()
         {}
 
         public CoverAccessory(string inputName)
         {
-           ImportCoverAccessory input = JsonConvert.DeserializeObject<ImportCoverAccessory>(File.ReadAllText(inputName));
+          CoverAccessory input = JsonConvert.DeserializeObject<CoverAccessory>(File.ReadAllText(inputName));
             this.id = input.id;
             this.description = input.description;
             this.code = input.code;
@@ -73,15 +65,43 @@ namespace test_accessories___selectionh
         }
 
 
+        public unsafe CoverAccessory(CoverAccessoryStruc* inputPtr)
+        {
+            CoverAccessoryStruc input = new CoverAccessoryStruc();
+            IntPtr pnt = (IntPtr)inputPtr;
+            input = (CoverAccessoryStruc)Marshal.PtrToStructure(pnt, typeof(CoverAccessoryStruc));
+
+            id = Convert.ToInt32(input.id);
+
+            IntPtr pnt2 = (IntPtr)input.testArray;
+            int elementSize = Marshal.SizeOf(typeof(int));
+            IntPtr j = pnt2;
+            try
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    testArray[i] = Marshal.PtrToStructure<int>(j);
+                    j = new IntPtr(j.ToInt64() + elementSize);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+
+            code = Marshal.PtrToStringAnsi(input.code);
+            description = Marshal.PtrToStringAnsi(input.description);
+            coverProvision = new CoverProvision((CoverProvisionStruct*)input.provision);
+            distanceToEdge = Convert.ToInt32(input.distanceToEdge);
+        }
+
+
 
         public bool isAcceptedProvision(string input)
         {
             return acceptedProvisionCodes.Contains(input);
         }
 
+
         public CoverAccessoryStruc toStruct()
         {
-           //ok coverProvision.id = 333;
             CoverAccessoryStruc result = new CoverAccessoryStruc(id, testArray, code, description, coverProvision, distanceToEdge);
             return (result);
         }

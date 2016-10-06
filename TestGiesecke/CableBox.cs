@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace test_accessories___selectionh
 {
@@ -20,7 +21,7 @@ namespace test_accessories___selectionh
         public unsafe IntPtr provision;
 
 
-        public unsafe CableBoxStruc(int _id, string _code, string _description, CableBoxProvision _provision)
+        public unsafe CableBoxStruc(int _id, string _code, string _description, CableBoxItem _provision)
         {
             this.id = Convert.ToUInt32(_id);
         //    fixed (int* pointer = _testArray) { this.testArray = pointer; };
@@ -33,8 +34,26 @@ namespace test_accessories___selectionh
         }
     }
 
+    class ImportCableBox
+    {
+        public int id { get; set; }
+        public string description { get; set; }
+        public string code { get; set; }
+        public string picture { get; set; }
+        public string defaultProvision { get; set; }
+        public string defaultCabin { get; set; }
+        public string defaultGlantPlate { get; set; }
+        public string defaultAccessPlate { get; set; }
+        public string defaultConnectionBar { get; set; }
+        public string defaultInsulator { get; set; }
+        public string defaultAirVent { get; set; }
+        public string defaultSupportingPlate { get; set; }
+        public string defaultInsulatorLProfile { get; set; }
+        public int connectionBarCount { get; set; }
+        public int airVentCount { get; set; }
+        public int cableEntryCount { get; set; }
+    }
 
-   
 
     public class CableBox
     {
@@ -42,25 +61,23 @@ namespace test_accessories___selectionh
         public string description { get; set; } = "...";
         public string code { get; set; } = "ZBxxxxxx";
         public string picture { get; set; }
-        public CableBoxProvision cableBoxProvision { get; set; } = new CableBoxProvision();
-        public CableBoxCabin cableBoxCabin { get; set; } = new CableBoxCabin();
-        public bool cabinEnabled = true;
+        public CableBoxItem cableBoxProvision { get; set; } = new CableBoxItem();
+        public CableBoxItem cableBoxCabin { get; set; } = new CableBoxItem();
         public CableBoxItem glantPlate { get; set; } = new CableBoxItem();
         public CableBoxItem accessPlate { get; set; } = new CableBoxItem();
-        public bool accessPlateEnabled = true;
         public CableBoxItem connectionBar { get; set; } = new CableBoxItem();
-        public int connectionBarCount = 0;
-        public bool connectionBarEnabled = true;
+       
         public CableBoxItem insulator { get; set; } = new CableBoxItem();
-        public bool insulatorEnabled = true;
         public CableBoxItem airVent { get; set; } = new CableBoxItem();
-        public int airVentCount = 0;
         public CableBoxItem supportingPlate { get; set; } = new CableBoxItem();
-        public bool supportingPlateEnabled = true;
         public CableBoxItem insulatorLProfile { get; set; } = new CableBoxItem();
-        public bool insulatorLProfileEnabled = true;
-        public CableBoxColor color = new CableBoxColor();
-        public CableBoxFinish finish = new CableBoxFinish();
+
+        public int connectionBarCount = 0;
+        public int airVentCount = 0;
+        public int cableEntryCount = 0;
+
+        public CableBoxItem color = new CableBoxItem();
+        public CableBoxItem finish = new CableBoxItem();
         
         public string drawing = "";
 
@@ -69,19 +86,26 @@ namespace test_accessories___selectionh
 
         public CableBox(string inputName)
         {
-           CableBox input = JsonConvert.DeserializeObject<CableBox>(File.ReadAllText(inputName));
+            ImportCableBox input = JsonConvert.DeserializeObject<ImportCableBox>(File.ReadAllText(inputName));
             this.id = input.id;
             this.description = input.description;
             this.code = input.code;
             this.picture = input.picture;
-            this.cabinEnabled = input.cabinEnabled;
-            this.accessPlateEnabled = input.accessPlateEnabled;
+            cableBoxProvision = new CableBoxItem(input.defaultProvision);
+            cableBoxCabin = new CableBoxItem(input.defaultCabin);
+            glantPlate = new CableBoxItem(input.defaultGlantPlate);
+            accessPlate = new CableBoxItem(input.defaultAccessPlate);
+            connectionBar = new CableBoxItem(input.defaultConnectionBar);
+            insulator = new CableBoxItem(input.defaultInsulator);
+            airVent = new CableBoxItem(input.defaultAirVent);
+            supportingPlate = new CableBoxItem(input.defaultSupportingPlate);
+            insulatorLProfile = new CableBoxItem(input.defaultInsulatorLProfile);
+
+
             this.connectionBarCount = input.connectionBarCount;
-            this.insulatorLProfileEnabled = input.insulatorLProfileEnabled;
             this.airVentCount = input.airVentCount;
-            this.insulatorEnabled = input.insulatorEnabled;
-            this.supportingPlateEnabled = input.supportingPlateEnabled;
-            this.connectionBarEnabled = input.connectionBarEnabled;
+            this.cableEntryCount = input.cableEntryCount;
+
         }
 
 

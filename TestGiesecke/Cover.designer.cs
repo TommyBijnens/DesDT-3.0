@@ -72,8 +72,8 @@
             this.finishingBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBoxCableboxes = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cableEntryBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -250,6 +250,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.cableEntryBox);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.AssemblyDrawingBox);
             this.groupBox4.Controls.Add(this.label14);
@@ -288,17 +290,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 323);
+            this.label11.Location = new System.Drawing.Point(6, 297);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 13);
             this.label11.TabIndex = 36;
             this.label11.Text = "Assembly drawing";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // AssemblyDrawingBox
             // 
             this.AssemblyDrawingBox.AllowDrop = true;
-            this.AssemblyDrawingBox.Location = new System.Drawing.Point(124, 322);
+            this.AssemblyDrawingBox.Location = new System.Drawing.Point(124, 296);
             this.AssemblyDrawingBox.Name = "AssemblyDrawingBox";
             this.AssemblyDrawingBox.ReadOnly = true;
             this.AssemblyDrawingBox.Size = new System.Drawing.Size(200, 20);
@@ -324,12 +325,12 @@
             this.supportingPlateBox.Size = new System.Drawing.Size(200, 20);
             this.supportingPlateBox.TabIndex = 33;
             this.supportingPlateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.supportingPlateBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.supportingPlateBox_MouseDoubleClick);
+            this.supportingPlateBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DisplayDrawing);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 268);
+            this.label13.Location = new System.Drawing.Point(6, 253);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 32;
@@ -338,7 +339,7 @@
             // airVentCountBox
             // 
             this.airVentCountBox.AllowDrop = true;
-            this.airVentCountBox.Location = new System.Drawing.Point(124, 268);
+            this.airVentCountBox.Location = new System.Drawing.Point(124, 253);
             this.airVentCountBox.Name = "airVentCountBox";
             this.airVentCountBox.ReadOnly = true;
             this.airVentCountBox.Size = new System.Drawing.Size(34, 20);
@@ -348,7 +349,7 @@
             // airVentBox
             // 
             this.airVentBox.AllowDrop = true;
-            this.airVentBox.Location = new System.Drawing.Point(164, 268);
+            this.airVentBox.Location = new System.Drawing.Point(164, 253);
             this.airVentBox.Name = "airVentBox";
             this.airVentBox.ReadOnly = true;
             this.airVentBox.Size = new System.Drawing.Size(160, 20);
@@ -358,7 +359,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 220);
+            this.label12.Location = new System.Drawing.Point(6, 216);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 13);
             this.label12.TabIndex = 29;
@@ -367,7 +368,7 @@
             // insulatorLProfileBox
             // 
             this.insulatorLProfileBox.AllowDrop = true;
-            this.insulatorLProfileBox.Location = new System.Drawing.Point(164, 220);
+            this.insulatorLProfileBox.Location = new System.Drawing.Point(164, 216);
             this.insulatorLProfileBox.Name = "insulatorLProfileBox";
             this.insulatorLProfileBox.ReadOnly = true;
             this.insulatorLProfileBox.Size = new System.Drawing.Size(160, 20);
@@ -377,7 +378,7 @@
             // insulatorBox
             // 
             this.insulatorBox.AllowDrop = true;
-            this.insulatorBox.Location = new System.Drawing.Point(164, 194);
+            this.insulatorBox.Location = new System.Drawing.Point(164, 190);
             this.insulatorBox.Name = "insulatorBox";
             this.insulatorBox.ReadOnly = true;
             this.insulatorBox.Size = new System.Drawing.Size(160, 20);
@@ -387,7 +388,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 194);
+            this.label10.Location = new System.Drawing.Point(6, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 21;
@@ -396,7 +397,7 @@
             // connectionBarCountBox
             // 
             this.connectionBarCountBox.AllowDrop = true;
-            this.connectionBarCountBox.Location = new System.Drawing.Point(124, 168);
+            this.connectionBarCountBox.Location = new System.Drawing.Point(124, 164);
             this.connectionBarCountBox.Name = "connectionBarCountBox";
             this.connectionBarCountBox.ReadOnly = true;
             this.connectionBarCountBox.Size = new System.Drawing.Size(34, 20);
@@ -406,7 +407,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 168);
+            this.label9.Location = new System.Drawing.Point(6, 164);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 19;
@@ -415,13 +416,13 @@
             // connectionBarBox
             // 
             this.connectionBarBox.AllowDrop = true;
-            this.connectionBarBox.Location = new System.Drawing.Point(164, 168);
+            this.connectionBarBox.Location = new System.Drawing.Point(164, 164);
             this.connectionBarBox.Name = "connectionBarBox";
             this.connectionBarBox.ReadOnly = true;
             this.connectionBarBox.Size = new System.Drawing.Size(160, 20);
             this.connectionBarBox.TabIndex = 18;
             this.connectionBarBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.connectionBarBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.connectionBarBox_MouseDoubleClick);
+            this.connectionBarBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DisplayDrawing);
             // 
             // label8
             // 
@@ -444,7 +445,7 @@
             // 
             // colorBox
             // 
-            this.colorBox.Location = new System.Drawing.Point(304, 348);
+            this.colorBox.Location = new System.Drawing.Point(304, 322);
             this.colorBox.Name = "colorBox";
             this.colorBox.ReadOnly = true;
             this.colorBox.Size = new System.Drawing.Size(20, 20);
@@ -453,7 +454,7 @@
             // 
             // paintingBox
             // 
-            this.paintingBox.Location = new System.Drawing.Point(164, 348);
+            this.paintingBox.Location = new System.Drawing.Point(164, 322);
             this.paintingBox.Name = "paintingBox";
             this.paintingBox.ReadOnly = true;
             this.paintingBox.Size = new System.Drawing.Size(134, 20);
@@ -472,7 +473,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 348);
+            this.label4.Location = new System.Drawing.Point(6, 322);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 12;
@@ -505,7 +506,7 @@
             this.glantPlateBox.Size = new System.Drawing.Size(200, 20);
             this.glantPlateBox.TabIndex = 7;
             this.glantPlateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.glantPlateBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.glantPlateBox_MouseDoubleClick);
+            this.glantPlateBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DisplayDrawing);
             // 
             // busductBox
             // 
@@ -516,7 +517,7 @@
             this.busductBox.Size = new System.Drawing.Size(200, 20);
             this.busductBox.TabIndex = 6;
             this.busductBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.busductBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.provisionBox2_MouseDoubleClick);
+            this.busductBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DisplayDrawing);
             // 
             // cabinBox
             // 
@@ -530,7 +531,7 @@
             // 
             // finishingBox
             // 
-            this.finishingBox.Location = new System.Drawing.Point(124, 348);
+            this.finishingBox.Location = new System.Drawing.Point(124, 322);
             this.finishingBox.Name = "finishingBox";
             this.finishingBox.ReadOnly = true;
             this.finishingBox.Size = new System.Drawing.Size(34, 20);
@@ -561,37 +562,33 @@
             this.listBoxCableboxes.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
             this.listBoxCableboxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.deleteItems);
             // 
-            // button1
+            // cableEntryBox
             // 
-            this.button1.Location = new System.Drawing.Point(595, 432);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.cableEntryBox.AllowDrop = true;
+            this.cableEntryBox.Location = new System.Drawing.Point(124, 348);
+            this.cableEntryBox.Name = "cableEntryBox";
+            this.cableEntryBox.Size = new System.Drawing.Size(200, 20);
+            this.cableEntryBox.TabIndex = 37;
+            this.cableEntryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button2
+            // label15
             // 
-            this.button2.Location = new System.Drawing.Point(676, 432);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Load";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.label15.Location = new System.Drawing.Point(6, 348);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(112, 13);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "# Cable entries";
             // 
             // Cover
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 467);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(763, 434);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button1);
             this.Name = "Cover";
             this.Text = "Cover accessories";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cover_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -616,8 +613,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox distanceBox;
         private System.Windows.Forms.TextBox provisionBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -655,6 +650,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox AssemblyDrawingBox;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox cableEntryBox;
     }
 }
 

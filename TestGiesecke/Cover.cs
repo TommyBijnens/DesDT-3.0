@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestGiesecke;
 
 namespace test_accessories___selectionh
 {
@@ -17,6 +18,7 @@ namespace test_accessories___selectionh
     {
         public Color defaultColor;
         public Color defaultBackground;
+        public string designNumber;
         public Cover()
         {
             InitializeComponent();
@@ -24,8 +26,7 @@ namespace test_accessories___selectionh
             groupBox4.AllowDrop = true;
             defaultColor = provisionBox.BackColor;
             defaultBackground = colorBox.BackColor;
-            load();
-
+            designNumber = "";
         }
 
         private void listBox2_DragDrop(object sender, DragEventArgs e)
@@ -34,15 +35,11 @@ namespace test_accessories___selectionh
             for (int i = 0; i < s.Length; i++)
             {
                 string input = s[i];
-                //CoverAccessory coverAccessory = new CoverAccessory(input);
-                //listBox2.Items.Add(coverAccessory);
-               
                 IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
                 IWshRuntimeLibrary.IWshShortcut link = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(s[i]);
-
                 CoverAccessory coverAccessory = new CoverAccessory(link.TargetPath);
                 listBox2.Items.Add(coverAccessory);
-
+                listBox2.SelectedIndex = listBox2.Items.Count-1;
             }
             checkProvision();
         }
@@ -53,6 +50,9 @@ namespace test_accessories___selectionh
             {
                 CoverAccessory selectedAccessory = (CoverAccessory)listBox2.SelectedItem;
                 CodeBox.Text = selectedAccessory.code;
+
+
+
                 Image preview = Image.FromFile(selectedAccessory.picture);
                 pictureBox1.Image = preview;
                 distanceBox.Text = selectedAccessory.distanceToEdge.ToString();
@@ -72,15 +72,11 @@ namespace test_accessories___selectionh
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void distanceBox_TextChanged(object sender, EventArgs e)
         {
             CoverAccessory selectedAccessory = (CoverAccessory)listBox2.SelectedItem;
-            selectedAccessory.distanceToEdge = Convert.ToInt32(distanceBox.Text);
+            if (distanceBox.Text != "") selectedAccessory.distanceToEdge = Convert.ToInt32(distanceBox.Text);
         }
 
         private void provisionBox_DragDrop(object sender, DragEventArgs e)
@@ -119,25 +115,63 @@ namespace test_accessories___selectionh
 
         public void save()
         {
-            File.WriteAllText(@"C:\temp\coverAccessories.json", JsonConvert.SerializeObject(listBox2.Items));
-            File.WriteAllText(@"C:\temp\cableBoxes.json", JsonConvert.SerializeObject(listBoxCableboxes.Items));
+            File.WriteAllText(Design.getDirectory(designNumber) + "coverAccessories.json", JsonConvert.SerializeObject(listBox2.Items));
+            File.WriteAllText(Design.getDirectory(designNumber) + "cableBoxes.json", JsonConvert.SerializeObject(listBoxCableboxes.Items));
         }
 
         public void load()
         {
-            List<CoverAccessory> loadedList = new List<CoverAccessory>();
-            loadedList = JsonConvert.DeserializeObject<List<CoverAccessory>>(File.ReadAllText(@"C:\temp\coverAccessories.json"));
-            listBox2.Items.Clear();
-            listBox2.Items.AddRange(loadedList.ToArray());
+            clear();
+            try
+            {
+                List<CoverAccessory> loadedList = new List<CoverAccessory>();
+                loadedList = JsonConvert.DeserializeObject<List<CoverAccessory>>(File.ReadAllText(Design.getDirectory(designNumber) + "coverAccessories.json"));
+                listBox2.Items.AddRange(loadedList.ToArray());
 
-            List<CableBox> loadedList2 = new List<CableBox>();
-            loadedList2 = JsonConvert.DeserializeObject<List<CableBox>>(File.ReadAllText(@"C:\temp\cableBoxes.json"));
-            listBoxCableboxes.Items.Clear();
-            listBoxCableboxes.Items.AddRange(loadedList2.ToArray());
-            
-
-
+                List<CableBox> loadedList2 = new List<CableBox>();
+                loadedList2 = JsonConvert.DeserializeObject<List<CableBox>>(File.ReadAllText(Design.getDirectory(designNumber) + "cableBoxes.json"));
+                listBoxCableboxes.Items.AddRange(loadedList2.ToArray());
+            }
+            catch (Exception e)
+            {
+                clear();
+                save();
+            }
+ 
+            try { if (listBox2.SelectedIndex == -1) listBox2.SelectedIndex = 0; } catch (Exception ex) { };
+            try { if (listBoxCableboxes.SelectedIndex == -1) listBoxCableboxes.SelectedIndex = 0; } catch (Exception ex) { };
         }
+
+        public void clear()
+        {
+            listBox2.Items.Clear();
+            listBoxCableboxes.Items.Clear();
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            provisionBox.Text = "";
+            distanceBox.Text = "";
+            CodeBox.Text = "";
+            listBox2.Items.Clear();
+            provisionBox.BackColor = defaultColor;
+            listBoxCableboxes.Items.Clear();
+            busductBox.Text = "";
+            cabinBox.Text= "";
+            cabinBox.Text = "";
+            accessPlateBox.Text = "";
+            supportingPlateBox.Text = "";
+            connectionBarBox.Text= "";
+            connectionBarCountBox.Text = "";
+            insulatorBox.Text = "";
+            insulatorLProfileBox.Text = "";
+            airVentBox.Text = "";
+            airVentCountBox.Text = "";
+            AssemblyDrawingBox.Text = "";
+            finishingBox.Text = "";
+            colorBox.Text = "";
+            colorBox.BackColor = defaultBackground;
+            cableEntryBox.Text = "";
+        }
+
 
         public List<CoverAccessory> getList()
         {
@@ -152,18 +186,7 @@ namespace test_accessories___selectionh
 
 
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            load();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            save();
-        }
-
-       
-
+      
         private void listBoxCableboxes_DragDrop(object sender, DragEventArgs e)
         {
 
@@ -175,6 +198,7 @@ namespace test_accessories___selectionh
                 IWshRuntimeLibrary.IWshShortcut link = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(input);
                 CableBox cableBox = new CableBox(link.TargetPath);
                 listBoxCableboxes.Items.Add(cableBox);
+                listBoxCableboxes.SelectedIndex = listBoxCableboxes.Items.Count-1;
             }
         }
 
@@ -202,8 +226,8 @@ namespace test_accessories___selectionh
                 IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
                 IWshRuntimeLibrary.IWshShortcut link = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(input);
                 CableBoxItem cableBoxItem = new CableBoxItem(link.TargetPath);
-                if (cableBoxItem.type == "cablebox provision") { selectedCablebox.cableBoxProvision = new CableBoxProvision(link.TargetPath); }
-                if (cableBoxItem.type == "cablebox cabin") { selectedCablebox.cableBoxCabin = new CableBoxCabin(link.TargetPath);}
+                if (cableBoxItem.type == "cablebox provision") { selectedCablebox.cableBoxProvision = new CableBoxItem(link.TargetPath); }
+                if (cableBoxItem.type == "cablebox cabin") { selectedCablebox.cableBoxCabin = new CableBoxItem(link.TargetPath);}
                 if (cableBoxItem.type == "cablebox glantPlate") { selectedCablebox.glantPlate = new CableBoxItem(link.TargetPath); }
                 if (cableBoxItem.type == "cablebox supportingPlate") { selectedCablebox.supportingPlate = new CableBoxItem(link.TargetPath); }
                 if (cableBoxItem.type == "cablebox connectionBar") { selectedCablebox.connectionBar = new CableBoxItem(link.TargetPath); }
@@ -212,8 +236,8 @@ namespace test_accessories___selectionh
                 if (cableBoxItem.type == "cablebox airVent") { selectedCablebox.airVent = new CableBoxItem(link.TargetPath); }
                 if (cableBoxItem.type == "cablebox assembly")
                 {
-                    selectedCablebox.cableBoxProvision = new CableBoxProvision(cableBoxItem.provisionFile);
-                    selectedCablebox.cableBoxCabin = new CableBoxCabin(cableBoxItem.cabinFile);
+                    selectedCablebox.cableBoxProvision = new CableBoxItem(cableBoxItem.provisionFile);
+                    selectedCablebox.cableBoxCabin = new CableBoxItem(cableBoxItem.cabinFile);
 
                     selectedCablebox.glantPlate = new CableBoxItem(cableBoxItem.glantPlateFile);
                     selectedCablebox.supportingPlate = new CableBoxItem(cableBoxItem.supportingPlateFile);
@@ -226,8 +250,8 @@ namespace test_accessories___selectionh
                     selectedCablebox.drawing = cableBoxItem.drawing;
                 }
 
-                else if (cableBoxItem.type == "color") { selectedCablebox.color = new CableBoxColor(link.TargetPath); }
-                else if (cableBoxItem.type == "finish") { selectedCablebox.finish = new CableBoxFinish(link.TargetPath); }
+                else if (cableBoxItem.type == "color") { selectedCablebox.color = new CableBoxItem(link.TargetPath); }
+                else if (cableBoxItem.type == "finish") { selectedCablebox.finish = new CableBoxItem(link.TargetPath); }
                 else selectedCablebox.code = "";
 
             }
@@ -235,11 +259,6 @@ namespace test_accessories___selectionh
             
         }
 
-        private void provisionBox2_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            CableBox selectedCableBox = (CableBox)listBoxCableboxes.SelectedItem;
-            System.Diagnostics.Process.Start(selectedCableBox.cableBoxProvision.drawing);
-        }
 
         private void cabinBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -247,54 +266,48 @@ namespace test_accessories___selectionh
             System.Diagnostics.Process.Start(selectedCableBox.cableBoxCabin.drawing);
         }
 
+
+        public void Bind(Control control, CableBoxItem cableboxItem)
+        {
+            control.DataBindings.Clear();
+            control.DataBindings.Add("Text", cableboxItem, "description");
+            control.DataBindings.Add("Visible", cableboxItem, "enabled");
+        }
+
+
         public void displayDetails(CableBox selectedCablebox)
         {
-            busductBox.Text = selectedCablebox.cableBoxProvision.description;
-            if (selectedCablebox.cabinEnabled) { cabinBox.Visible = true; cabinBox.Text = selectedCablebox.cableBoxCabin.description; }
-            else { cabinBox.Visible = false; }
-            try
+ 
+            Bind(busductBox, selectedCablebox.cableBoxProvision);
+            Bind(cabinBox, selectedCablebox.cableBoxCabin);
+             
+          try
             {
                 paintingBox.Text = selectedCablebox.color.description + " (" + RAL_Colors.getDescription(selectedCablebox.color.description) + ")";
                 colorBox.BackColor = RAL_Colors.getColor(selectedCablebox.color.description);
             }
             catch (Exception ex) { paintingBox.Text = ""; colorBox.BackColor = defaultBackground; }
+
             finishingBox.Text = selectedCablebox.finish.description;
 
-            glantPlateBox.Text = selectedCablebox.glantPlate.description;
-            accessPlateBox.Text = selectedCablebox.accessPlate.description;
-            supportingPlateBox.Text = selectedCablebox.supportingPlate.description;
+            Bind(glantPlateBox, selectedCablebox.glantPlate);
+            Bind(accessPlateBox, selectedCablebox.accessPlate);
+            Bind(supportingPlateBox, selectedCablebox.supportingPlate);
 
-            insulatorBox.Text = selectedCablebox.insulator.description;
-            connectionBarBox.Text = selectedCablebox.connectionBar.description;
-            connectionBarCountBox.Text = selectedCablebox.connectionBarCount.ToString();
+            Bind(insulatorLProfileBox, selectedCablebox.insulatorLProfile);
 
-            airVentBox.Text = selectedCablebox.airVent.description;
+            Bind(insulatorBox, selectedCablebox.insulator);
+            Bind(connectionBarBox, selectedCablebox.connectionBar);
+
+            Bind(airVentBox, selectedCablebox.airVent);
+
             airVentCountBox.Text = selectedCablebox.airVentCount.ToString();
-
-            if (selectedCablebox.accessPlateEnabled) { accessPlateBox.Visible = true; accessPlateBox.Text = selectedCablebox.accessPlate.description; }
-            else { accessPlateBox.Visible = false; }
-
-            if (selectedCablebox.insulatorLProfileEnabled) { insulatorLProfileBox.Visible = true; insulatorLProfileBox.Text = selectedCablebox.insulatorLProfile.description; }
-            else { insulatorLProfileBox.Visible = false; }
-
-            if (selectedCablebox.insulatorEnabled) { insulatorBox.Visible = true; insulatorBox.Text = selectedCablebox.insulator.description; }
-            else { insulatorBox.Visible = false; }
-
-            if (selectedCablebox.supportingPlateEnabled) { supportingPlateBox.Visible = true; supportingPlateBox.Text = selectedCablebox.supportingPlate.description; }
-            else { supportingPlateBox.Visible = false; }
-
-            if (selectedCablebox.connectionBarEnabled) { connectionBarBox.Visible = true; connectionBarBox.Text = selectedCablebox.connectionBar.description; connectionBarCountBox.Visible = true; connectionBarCountBox.Text = selectedCablebox.connectionBarCount.ToString(); }
-            else { connectionBarBox.Visible = false; connectionBarCountBox.Visible = false; }
-
+            connectionBarCountBox.Text = selectedCablebox.connectionBarCount.ToString();
+            cableEntryBox.Text = selectedCablebox.cableEntryCount.ToString();
             AssemblyDrawingBox.Text = selectedCablebox.code;
-            
-
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void AssemblyDrawingBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -302,27 +315,24 @@ namespace test_accessories___selectionh
             System.Diagnostics.Process.Start(selectedCableBox.drawing);
         }
 
+    
 
-
-
-
-
-        private void supportingPlateBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        public void setDesign(string input)
         {
-            CableBox selectedCableBox = (CableBox)listBoxCableboxes.SelectedItem;
-            System.Diagnostics.Process.Start(selectedCableBox.supportingPlate.drawing);
+            designNumber = input;
+            Text = "Cover accessories - " + input;
         }
 
-        private void glantPlateBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Cover_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CableBox selectedCableBox = (CableBox)listBoxCableboxes.SelectedItem;
-            System.Diagnostics.Process.Start(selectedCableBox.glantPlate.drawing);
+            save();
         }
 
-        private void connectionBarBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void DisplayDrawing(object sender, MouseEventArgs e)
         {
-            CableBox selectedCableBox = (CableBox)listBoxCableboxes.SelectedItem;
-            System.Diagnostics.Process.Start(selectedCableBox.connectionBar.drawing);
+            Binding db = ((TextBox)sender).DataBindings["text"];
+            CableBoxItem boundItem = (CableBoxItem)db.DataSource;
+            System.Diagnostics.Process.Start(boundItem.drawing);
         }
     }
 }

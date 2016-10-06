@@ -24,8 +24,6 @@ namespace test_accessories___selectionh
             this.description = Marshal.StringToHGlobalAnsi(_description);
         }
     }
-
- 
    
 
 
@@ -44,6 +42,7 @@ namespace test_accessories___selectionh
         public string InsulatorFile = "";
         public string insulatorLProfileFile = "";
         public string airVentFile = "";
+        public bool enabled { get; set; } = true;
 
 
 
@@ -68,6 +67,7 @@ namespace test_accessories___selectionh
                 this.InsulatorFile = input.InsulatorFile;
                 this.insulatorLProfileFile = input.insulatorLProfileFile;
                 this.airVentFile = input.airVentFile;
+                this.enabled = input.enabled;
             }
             catch (Exception ex) { }//file not found?
 
@@ -78,44 +78,10 @@ namespace test_accessories___selectionh
             CoverProvisionStruct result = new CoverProvisionStruct(id, code, description);
             return (result);
         }
-    }
+
+     }
 
 
-    public class CableBoxProvision : CableBoxItem{
-        public CableBoxProvision() : base() { }
-        public CableBoxProvision(String input) : base(input){}
-    }
-
-
-    public class CableBoxCabin : CableBoxItem
-    {
-        public CableBoxCabin() : base() { }
-        public CableBoxCabin(String input) : base(input){ }
-    }
-
-    public class CableboxAssembly : CableBoxItem
-    {
-        public CableboxAssembly() : base() { }
-        public CableboxAssembly(String input) : base(input)
-        {
-
-        }
-    }
-
-
-
-    public class CableBoxColor : CableBoxItem
-    {
-        public CableBoxColor() : base() { }
-        public CableBoxColor(String input) : base(input) { }
-    }
     
-    public class CableBoxFinish : CableBoxItem
-    {
-        public CableBoxFinish() : base() { }
-        public CableBoxFinish(String input) : base(input) { }
-    }
-
-   
 
 }

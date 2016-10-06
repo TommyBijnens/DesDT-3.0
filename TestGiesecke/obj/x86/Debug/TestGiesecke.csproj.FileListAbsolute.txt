@@ -68,3 +68,15 @@ C:\My Documents\Visual Studio 2015\Projects\DesDT 3.0\TestGiesecke\obj\x86\Debug
 C:\My Documents\Visual Studio 2015\Projects\DesDT 3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.pdb
 C:\My Documents\Visual Studio 2015\Projects\DesDT 3.0\TestGiesecke\obj\x86\Debug\Interop.IWshRuntimeLibrary.dll
 C:\My Documents\Visual Studio 2015\Projects\DesDT 3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.csproj.ResolveComReference.cache
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\bin\x86\Debug\app.config
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\bin\x86\Debug\TestGiesecke.dll.config
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\bin\x86\Debug\TestGiesecke.dll
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\bin\x86\Debug\TestGiesecke.pdb
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.csprojResolveAssemblyReference.cache
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.csproj.ResolveComReference.cache
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\test_accessories___selectionh.Cover.resources
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.csproj.GenerateResource.Cache
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.dll
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.pdb
