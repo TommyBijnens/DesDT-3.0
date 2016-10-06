@@ -44,6 +44,8 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cableEntryBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.AssemblyDrawingBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.finishingBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBoxCableboxes = new System.Windows.Forms.ListBox();
-            this.cableEntryBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -286,6 +286,23 @@
             this.groupBox4.Text = "Cablebox details";
             this.groupBox4.DragDrop += new System.Windows.Forms.DragEventHandler(this.groupBox4_DragDrop);
             this.groupBox4.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(6, 348);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(112, 13);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "# Cable entries";
+            // 
+            // cableEntryBox
+            // 
+            this.cableEntryBox.AllowDrop = true;
+            this.cableEntryBox.Location = new System.Drawing.Point(124, 348);
+            this.cableEntryBox.Name = "cableEntryBox";
+            this.cableEntryBox.Size = new System.Drawing.Size(200, 20);
+            this.cableEntryBox.TabIndex = 37;
+            this.cableEntryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -562,23 +579,6 @@
             this.listBoxCableboxes.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
             this.listBoxCableboxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.deleteItems);
             // 
-            // cableEntryBox
-            // 
-            this.cableEntryBox.AllowDrop = true;
-            this.cableEntryBox.Location = new System.Drawing.Point(124, 348);
-            this.cableEntryBox.Name = "cableEntryBox";
-            this.cableEntryBox.Size = new System.Drawing.Size(200, 20);
-            this.cableEntryBox.TabIndex = 37;
-            this.cableEntryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label15
-            // 
-            this.label15.Location = new System.Drawing.Point(6, 348);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 13);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "# Cable entries";
-            // 
             // Cover
             // 
             this.AllowDrop = true;
@@ -587,7 +587,7 @@
             this.ClientSize = new System.Drawing.Size(763, 434);
             this.Controls.Add(this.tabControl1);
             this.Name = "Cover";
-            this.Text = "Cover accessories";
+            this.Text = "Cover accessories WPF";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cover_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
