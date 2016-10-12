@@ -13,14 +13,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using test_accessories___selectionh;
 using TestGiesecke;
-
-
-
+using WpfApplication2;
 
 class Test
 {
     static Cover cover = new Cover();
-
+    static CoverClass newCover = new CoverClass();
+    //   static MainWindow mainWindow = new MainWindow();
 
     [DllExport("getAccessory", CallingConvention = CallingConvention.Cdecl)]
     public unsafe static CoverAccessoryStruc getAccessory()
@@ -70,8 +69,14 @@ class Test
     [DllExport("setDesign", CallingConvention = CallingConvention.Cdecl)]
     public static void setDesign(string value)
     {
-       cover.setDesign(value);
-       cover.load();
+        //cover.setDesign(value);
+        //cover.load();
+
+        newCover.setDesign(value);
+        newCover.load();
+
+
+
     }
 
 
@@ -88,8 +93,13 @@ class Test
 
     public static void test()
     {
+
         
-        cover.ShowDialog();
+        MainWindow mainWindow = new MainWindow(newCover);
+        mainWindow.ShowDialog();
+
+        //cover.ShowDialog();
+        //mainWindow.ShowDialog();
     }
 
 

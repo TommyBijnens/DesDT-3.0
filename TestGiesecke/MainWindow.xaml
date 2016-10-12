@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="511.144" Width="787.757" Closing="Window_Closing">
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="460" Margin="10,10,0,0" VerticalAlignment="Top" Width="760">
+            <TabItem Header="Accessories" AllowDrop="True" DragEnter="DragEnter">
+                <Canvas>
+                    <ListBox x:Name="listBox1" DisplayMemberPath="description" HorizontalAlignment="Left" Height="412" Margin="10,10,0,0" VerticalAlignment="Top" Width="360" Grid.ColumnSpan="2" DragEnter="DragEnter" Drop="listBox1_Drop" KeyDown="DeleteKeyDown"/>
+                    <Canvas Height="412" Canvas.Left="375" Canvas.Top="10" Width="369" DragEnter="DragEnter" Drop="CoverProvisionDrop">
+                        <TextBox x:Name="textBox" Text="{Binding Path = SelectedItem.code, ElementName=listBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="379"/>
+                        <TextBox x:Name="textBox2" Text="{Binding Path = SelectedItem.distanceToEdge, ElementName=listBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="349"/>
+                        <TextBox x:Name="textBox3" Text="{Binding Path = SelectedItem.coverProvision.description, ElementName=listBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="319" IsReadOnly="True"/>
+                        <Image x:Name="image" Height="270" Width="349" RenderTransformOrigin="4.787,1.607" Canvas.Left="10" Canvas.Top="10" Source="{Binding Path = SelectedItem.picture, ElementName=listBox1}"/>
+                        <Label x:Name="label1" Content="Provision on cover" Height="26" Width="120" Canvas.Top="316"/>
+                        <Label x:Name="label2" Content="Distance to tank" Height="26" Width="120" Canvas.Top="346"/>
+                        <Label x:Name="label3" Content="Accessory code" Height="26" Width="120" Canvas.Top="376"/>
+                    </Canvas>
+
+
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Cableboxes">
+                <Canvas>
+                    <ListBox x:Name="listBox2" DisplayMemberPath="description" HorizontalAlignment="Left" Height="180" Margin="10,10,0,0" VerticalAlignment="Top" Width="360" AllowDrop="True" KeyDown="DeleteKeyDown" DragEnter="DragEnter" Drop="CableboxDrop"/>
+                    <Image x:Name="image2" Height="227" Width="360" RenderTransformOrigin="4.787,1.607" Canvas.Left="10" Canvas.Top="195" Source="{Binding Path = SelectedItem.picture, ElementName=listBox2}"/>
+                    <Canvas Height="412" Width="369" Canvas.Left="375" Canvas.Top="10" DragEnter="DragEnter" Drop="CableboxItemDrop" AllowDrop="True">
+                        <Label x:Name="label4" Content="Accessory code" Height="26" Width="120" Canvas.Top="60" Canvas.Left="10"/>
+                        <TextBox x:Name="textBox4" Text="{Binding Path = SelectedItem.cableBoxProvision.description, ElementName=listBox2}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="10" IsReadOnly="True"/>
+                        <TextBox x:Name="textBox5" Text="{Binding Path = SelectedItem.cableBoxCabin.description, ElementName=listBox2}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="40" IsReadOnly="True"/>
+                        <TextBox x:Name="textBox6" Text="{Binding Path = SelectedItem.glantPlate.description, ElementName=listBox2}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="70" IsReadOnly="True"/>
+                        <TextBox x:Name="textBox7" Text="{Binding Path = SelectedItem.accessPlate.description, ElementName=listBox2}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="100" IsReadOnly="True" IsEnabled="{Binding Path = SelectedItem.accessPlate.enabled, ElementName=listBox2}"/>
+                        <TextBox x:Name="textBox8" Text="{Binding Path = SelectedItem.supportingPlate.description, ElementName=listBox2}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Canvas.Left="119" Canvas.Top="130" IsReadOnly="True"/>
+
+
+
+                    </Canvas>
+                </Canvas>
+            </TabItem>
+
+
+        </TabControl>
+
+    </Grid>
+</Window>

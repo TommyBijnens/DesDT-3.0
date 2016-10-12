@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestGiesecke;
+using WpfApplication2;
 
 namespace test_accessories___selectionh
 {
@@ -333,6 +334,12 @@ namespace test_accessories___selectionh
             Binding db = ((TextBox)sender).DataBindings["text"];
             CableBoxItem boundItem = (CableBoxItem)db.DataSource;
             System.Diagnostics.Process.Start(boundItem.drawing);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           // MainWindow mainWindow = new MainWindow();
+           // mainWindow.ShowDialog();
         }
     }
 }

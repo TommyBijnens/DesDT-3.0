@@ -80,3 +80,12 @@ C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\test_ac
 C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.csproj.GenerateResource.Cache
 C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.dll
 C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.pdb
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\App.g.cs
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke_MarkupCompile.cache
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke_MarkupCompile.lref
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\MainWindow.g.cs
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\App.baml
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\MainWindow.baml
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\TestGiesecke.g.resources
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\MainWindow2.g.cs
+C:\Users\tommy.bijnens\Source\Repos\DesDT-3.0\TestGiesecke\obj\x86\Debug\MainWindow2.baml

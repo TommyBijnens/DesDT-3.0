@@ -74,6 +74,7 @@
             this.finishingBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBoxCableboxes = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,6 +112,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -579,6 +581,16 @@
             this.listBoxCableboxes.DragEnter += new System.Windows.Forms.DragEventHandler(this.DragEnter);
             this.listBoxCableboxes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.deleteItems);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 270);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Cover
             // 
             this.AllowDrop = true;
@@ -652,6 +664,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox cableEntryBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 
