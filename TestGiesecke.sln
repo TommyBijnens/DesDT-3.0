@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGiesecke", "TestGiesecke\TestGiesecke.csproj", "{C166B615-52C8-4C2A-BCF9-94F00F1081EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D} = {433404A7-9588-4F34-A0F9-DEB3F563DB5D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTestServer", "..\..\..\..\..\My Documents\Visual Studio 2015\Projects\shape 3 - async\iTestServer\iTestServer.csproj", "{433404A7-9588-4F34-A0F9-DEB3F563DB5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,14 @@ Global
 		{C166B615-52C8-4C2A-BCF9-94F00F1081EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C166B615-52C8-4C2A-BCF9-94F00F1081EF}.Release|x86.ActiveCfg = Release|x86
 		{C166B615-52C8-4C2A-BCF9-94F00F1081EF}.Release|x86.Build.0 = Release|x86
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{433404A7-9588-4F34-A0F9-DEB3F563DB5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

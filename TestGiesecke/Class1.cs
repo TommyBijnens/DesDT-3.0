@@ -17,8 +17,9 @@ using WpfApplication2;
 
 class Test
 {
-    static Cover cover = new Cover();
-    static CoverClass newCover = new CoverClass();
+ //   static Cover cover = new Cover();
+
+ /*   static CoverClass newCover = new CoverClass();
     //   static MainWindow mainWindow = new MainWindow();
 
     [DllExport("getAccessory", CallingConvention = CallingConvention.Cdecl)]
@@ -65,21 +66,23 @@ class Test
         _STAThread.Start();
     }
 
-
+*/
     [DllExport("setDesign", CallingConvention = CallingConvention.Cdecl)]
     public static void setDesign(string value)
     {
         //cover.setDesign(value);
         //cover.load();
 
-        newCover.setDesign(value);
-        newCover.load();
+
+
+        //newCover.setDesign(value);
+        //newCover.load();
 
 
 
     }
 
-
+    /*
     [DllExport("testSend", CallingConvention = CallingConvention.Cdecl)]
     public unsafe static void testSend(CoverAccessoryStruc* input)
     {
@@ -101,9 +104,33 @@ class Test
         //cover.ShowDialog();
         //mainWindow.ShowDialog();
     }
+    */
+
+    [DllExport("testWS", CallingConvention = CallingConvention.Cdecl)]
+    public unsafe static void testWS()
+    {
+        BasicHttpBinding binding = new BasicHttpBinding();
+        binding.Name = "CreoWebServiceDefPortBinding";
+        EndpointAddress endpoint = new EndpointAddress("http://localhost:59392/TransformerService.svc?wdsl");
+
+        //   TestGiesecke.ServiceReference1.CreoWebServiceDefClient Creo = new TestGiesecke.ServiceReference1.CreoWebServiceDefClient(binding, endpoint);
 
 
-   
+
+        TestGiesecke.ServiceReference1.Service1Client trafo;
+
+        trafo = new TestGiesecke.ServiceReference1.Service1Client(binding, endpoint);
+
+     //   trafo.set
+        string output = trafo.GetParameterList(); //Creo.getParameters();
+                                                  //  output = output.Substring(0, 6);
+
+        MessageBox.Show(output);
+
+    }
+
+
+
 
 }
 
