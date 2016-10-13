@@ -4,7 +4,10 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iTestServer" />
+      <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/test_accessories___selectionh" />
+      <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/TestGiesecke" />
+      <xsd:import schemaLocation="http://localhost:59392/TransformerService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/iTestServer" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -12,6 +15,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCover_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCover" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCover_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoverResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetWorkNumber_InputMessage">
     <wsdl:part name="parameters" element="tns:GetWorkNumber" />
@@ -36,6 +45,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetCover">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCover" message="tns:IService1_GetCover_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCoverResponse" message="tns:IService1_GetCover_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetWorkNumber">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetWorkNumber" message="tns:IService1_GetWorkNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetWorkNumberResponse" message="tns:IService1_GetWorkNumber_OutputMessage" />
@@ -53,6 +66,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCover">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCover" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

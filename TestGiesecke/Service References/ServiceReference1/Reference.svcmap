@@ -22,11 +22,14 @@
     <MetadataSource Address="http://localhost:59392/TransformerService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="TransformerService4.xsd" MetadataType="Schema" ID="a4077615-297b-403f-a568-4e1a1d9b9b68" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd4" />
     <MetadataFile FileName="TransformerService.xsd" MetadataType="Schema" ID="87d7645c-03fc-4f0b-b3f2-ac698b894341" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="8a497066-088a-4e09-a9a7-5796710bb374" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?wsdl" />
-    <MetadataFile FileName="TransformerService1.xsd" MetadataType="Schema" ID="596091fa-bd77-4f3a-8de9-16368c1dd8dd" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="TransformerService2.xsd" MetadataType="Schema" ID="f59986cb-7155-42da-ab3f-a1a5d94f5c3f" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd0" />
     <MetadataFile FileName="TransformerService.disco" MetadataType="Disco" ID="afe6b12e-86a9-47f0-af1e-8d717d3bebaf" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?disco" />
+    <MetadataFile FileName="TransformerService3.xsd" MetadataType="Schema" ID="e757e7ca-047b-440b-998a-9ad454d8200f" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TransformerService1.xsd" MetadataType="Schema" ID="596091fa-bd77-4f3a-8de9-16368c1dd8dd" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TransformerService5.xsd" MetadataType="Schema" ID="033651dc-847f-43e1-ad8e-f4b0b9fcb4e0" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="8a497066-088a-4e09-a9a7-5796710bb374" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?wsdl" />
+    <MetadataFile FileName="TransformerService2.xsd" MetadataType="Schema" ID="f59986cb-7155-42da-ab3f-a1a5d94f5c3f" SourceId="1" SourceUrl="http://localhost:59392/TransformerService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

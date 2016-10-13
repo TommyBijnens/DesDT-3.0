@@ -15,6 +15,903 @@ namespace TestGiesecke.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CoverAccessory", Namespace="http://schemas.datacontract.org/2004/07/test_accessories___selectionh")]
+    [System.SerializableAttribute()]
+    public partial class CoverAccessory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] acceptedProvisionCodesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CoverProvision coverProvisionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string defaultProvisionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int distanceToEdgeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pictureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int[] testArrayField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] acceptedProvisionCodes {
+            get {
+                return this.acceptedProvisionCodesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.acceptedProvisionCodesField, value) != true)) {
+                    this.acceptedProvisionCodesField = value;
+                    this.RaisePropertyChanged("acceptedProvisionCodes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codeField, value) != true)) {
+                    this.codeField = value;
+                    this.RaisePropertyChanged("code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CoverProvision coverProvision {
+            get {
+                return this.coverProvisionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.coverProvisionField, value) != true)) {
+                    this.coverProvisionField = value;
+                    this.RaisePropertyChanged("coverProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string defaultProvision {
+            get {
+                return this.defaultProvisionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.defaultProvisionField, value) != true)) {
+                    this.defaultProvisionField = value;
+                    this.RaisePropertyChanged("defaultProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int distanceToEdge {
+            get {
+                return this.distanceToEdgeField;
+            }
+            set {
+                if ((this.distanceToEdgeField.Equals(value) != true)) {
+                    this.distanceToEdgeField = value;
+                    this.RaisePropertyChanged("distanceToEdge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string picture {
+            get {
+                return this.pictureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
+                    this.pictureField = value;
+                    this.RaisePropertyChanged("picture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int[] testArray {
+            get {
+                return this.testArrayField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.testArrayField, value) != true)) {
+                    this.testArrayField = value;
+                    this.RaisePropertyChanged("testArray");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CoverProvision", Namespace="http://schemas.datacontract.org/2004/07/test_accessories___selectionh")]
+    [System.SerializableAttribute()]
+    public partial class CoverProvision : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codeField, value) != true)) {
+                    this.codeField = value;
+                    this.RaisePropertyChanged("code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CoverClass", Namespace="http://schemas.datacontract.org/2004/07/TestGiesecke")]
+    [System.SerializableAttribute()]
+    public partial class CoverClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CoverAccessory[] accessoryListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBox[] cableboxListField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CoverAccessory[] accessoryList {
+            get {
+                return this.accessoryListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.accessoryListField, value) != true)) {
+                    this.accessoryListField = value;
+                    this.RaisePropertyChanged("accessoryList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBox[] cableboxList {
+            get {
+                return this.cableboxListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cableboxListField, value) != true)) {
+                    this.cableboxListField = value;
+                    this.RaisePropertyChanged("cableboxList");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CableBox", Namespace="http://schemas.datacontract.org/2004/07/test_accessories___selectionh")]
+    [System.SerializableAttribute()]
+    public partial class CableBox : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem accessPlateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem airVentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int airVentCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem cableBoxCabinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem cableBoxProvisionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int cableEntryCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem colorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem connectionBarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int connectionBarCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string drawingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem finishField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem glantPlateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem insulatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem insulatorLProfileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pictureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestGiesecke.ServiceReference1.CableBoxItem supportingPlateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem accessPlate {
+            get {
+                return this.accessPlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.accessPlateField, value) != true)) {
+                    this.accessPlateField = value;
+                    this.RaisePropertyChanged("accessPlate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem airVent {
+            get {
+                return this.airVentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.airVentField, value) != true)) {
+                    this.airVentField = value;
+                    this.RaisePropertyChanged("airVent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int airVentCount {
+            get {
+                return this.airVentCountField;
+            }
+            set {
+                if ((this.airVentCountField.Equals(value) != true)) {
+                    this.airVentCountField = value;
+                    this.RaisePropertyChanged("airVentCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem cableBoxCabin {
+            get {
+                return this.cableBoxCabinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cableBoxCabinField, value) != true)) {
+                    this.cableBoxCabinField = value;
+                    this.RaisePropertyChanged("cableBoxCabin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem cableBoxProvision {
+            get {
+                return this.cableBoxProvisionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cableBoxProvisionField, value) != true)) {
+                    this.cableBoxProvisionField = value;
+                    this.RaisePropertyChanged("cableBoxProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int cableEntryCount {
+            get {
+                return this.cableEntryCountField;
+            }
+            set {
+                if ((this.cableEntryCountField.Equals(value) != true)) {
+                    this.cableEntryCountField = value;
+                    this.RaisePropertyChanged("cableEntryCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codeField, value) != true)) {
+                    this.codeField = value;
+                    this.RaisePropertyChanged("code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem color {
+            get {
+                return this.colorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.colorField, value) != true)) {
+                    this.colorField = value;
+                    this.RaisePropertyChanged("color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem connectionBar {
+            get {
+                return this.connectionBarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connectionBarField, value) != true)) {
+                    this.connectionBarField = value;
+                    this.RaisePropertyChanged("connectionBar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int connectionBarCount {
+            get {
+                return this.connectionBarCountField;
+            }
+            set {
+                if ((this.connectionBarCountField.Equals(value) != true)) {
+                    this.connectionBarCountField = value;
+                    this.RaisePropertyChanged("connectionBarCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string drawing {
+            get {
+                return this.drawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.drawingField, value) != true)) {
+                    this.drawingField = value;
+                    this.RaisePropertyChanged("drawing");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem finish {
+            get {
+                return this.finishField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.finishField, value) != true)) {
+                    this.finishField = value;
+                    this.RaisePropertyChanged("finish");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem glantPlate {
+            get {
+                return this.glantPlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.glantPlateField, value) != true)) {
+                    this.glantPlateField = value;
+                    this.RaisePropertyChanged("glantPlate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem insulator {
+            get {
+                return this.insulatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.insulatorField, value) != true)) {
+                    this.insulatorField = value;
+                    this.RaisePropertyChanged("insulator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem insulatorLProfile {
+            get {
+                return this.insulatorLProfileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.insulatorLProfileField, value) != true)) {
+                    this.insulatorLProfileField = value;
+                    this.RaisePropertyChanged("insulatorLProfile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string picture {
+            get {
+                return this.pictureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
+                    this.pictureField = value;
+                    this.RaisePropertyChanged("picture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestGiesecke.ServiceReference1.CableBoxItem supportingPlate {
+            get {
+                return this.supportingPlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.supportingPlateField, value) != true)) {
+                    this.supportingPlateField = value;
+                    this.RaisePropertyChanged("supportingPlate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CableBoxItem", Namespace="http://schemas.datacontract.org/2004/07/test_accessories___selectionh")]
+    [System.SerializableAttribute()]
+    public partial class CableBoxItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsulatorFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string airVentFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cabinFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string connectionBarFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string drawingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool enabledField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string glantPlateFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string insulatorLProfileFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string provisionFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string supportingPlateFileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InsulatorFile {
+            get {
+                return this.InsulatorFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsulatorFileField, value) != true)) {
+                    this.InsulatorFileField = value;
+                    this.RaisePropertyChanged("InsulatorFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string airVentFile {
+            get {
+                return this.airVentFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.airVentFileField, value) != true)) {
+                    this.airVentFileField = value;
+                    this.RaisePropertyChanged("airVentFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cabinFile {
+            get {
+                return this.cabinFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cabinFileField, value) != true)) {
+                    this.cabinFileField = value;
+                    this.RaisePropertyChanged("cabinFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string code {
+            get {
+                return this.codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codeField, value) != true)) {
+                    this.codeField = value;
+                    this.RaisePropertyChanged("code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string connectionBarFile {
+            get {
+                return this.connectionBarFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.connectionBarFileField, value) != true)) {
+                    this.connectionBarFileField = value;
+                    this.RaisePropertyChanged("connectionBarFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string drawing {
+            get {
+                return this.drawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.drawingField, value) != true)) {
+                    this.drawingField = value;
+                    this.RaisePropertyChanged("drawing");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool enabled {
+            get {
+                return this.enabledField;
+            }
+            set {
+                if ((this.enabledField.Equals(value) != true)) {
+                    this.enabledField = value;
+                    this.RaisePropertyChanged("enabled");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string glantPlateFile {
+            get {
+                return this.glantPlateFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.glantPlateFileField, value) != true)) {
+                    this.glantPlateFileField = value;
+                    this.RaisePropertyChanged("glantPlateFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string insulatorLProfileFile {
+            get {
+                return this.insulatorLProfileFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.insulatorLProfileFileField, value) != true)) {
+                    this.insulatorLProfileFileField = value;
+                    this.RaisePropertyChanged("insulatorLProfileFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string provisionFile {
+            get {
+                return this.provisionFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.provisionFileField, value) != true)) {
+                    this.provisionFileField = value;
+                    this.RaisePropertyChanged("provisionFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string supportingPlateFile {
+            get {
+                return this.supportingPlateFileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.supportingPlateFileField, value) != true)) {
+                    this.supportingPlateFileField = value;
+                    this.RaisePropertyChanged("supportingPlateFile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/iTestServer")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -79,10 +976,16 @@ namespace TestGiesecke.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
+        TestGiesecke.ServiceReference1.CoverAccessory GetData(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverAccessory> GetDataAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCover", ReplyAction="http://tempuri.org/IService1/GetCoverResponse")]
+        TestGiesecke.ServiceReference1.CoverClass GetCover();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCover", ReplyAction="http://tempuri.org/IService1/GetCoverResponse")]
+        System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverClass> GetCoverAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetWorkNumber", ReplyAction="http://tempuri.org/IService1/GetWorkNumberResponse")]
         string GetWorkNumber();
@@ -130,12 +1033,20 @@ namespace TestGiesecke.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
+        public TestGiesecke.ServiceReference1.CoverAccessory GetData(int value) {
             return base.Channel.GetData(value);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
+        public System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverAccessory> GetDataAsync(int value) {
             return base.Channel.GetDataAsync(value);
+        }
+        
+        public TestGiesecke.ServiceReference1.CoverClass GetCover() {
+            return base.Channel.GetCover();
+        }
+        
+        public System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverClass> GetCoverAsync() {
+            return base.Channel.GetCoverAsync();
         }
         
         public string GetWorkNumber() {

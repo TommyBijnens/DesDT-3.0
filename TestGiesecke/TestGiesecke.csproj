@@ -80,6 +80,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConvertToStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RAL_Colors.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
@@ -102,6 +103,12 @@
     <None Include="Service References\ServiceReference1\TestGiesecke.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\TestGiesecke.ServiceReference1.CoverAccessory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TestGiesecke.ServiceReference1.CoverClass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TransformerService.disco" />
     <None Include="Accessories.json" />
     <None Include="packages.config" />
@@ -113,6 +120,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\TransformerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\TransformerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\TransformerService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\TransformerService5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="TestGiesecke.dll.config" />
