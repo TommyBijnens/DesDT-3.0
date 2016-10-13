@@ -22,45 +22,38 @@ class Test
     static TestGiesecke.ServiceReference1.Service1Client trafo;
    // static Cover cover = trafo.
 
-    /*   static CoverClass newCover = new CoverClass();
-       //   static MainWindow mainWindow = new MainWindow();
 
-       [DllExport("getAccessory", CallingConvention = CallingConvention.Cdecl)]
-       public unsafe static CoverAccessoryStruc getAccessory()
-       {
-           CoverAccessory accessory = new CoverAccessory();
-           accessory.id = 393;
-           accessory.testArray = new int[3] { 10, 20, 30};
-           accessory.code = "ZBxxxxxx";
-           return accessory.toStruct();
-       }
-
-*/
-
-/*       [DllExport("getAccessoryList", CallingConvention = CallingConvention.Cdecl)]
+       [DllExport("getAccessoryList", CallingConvention = CallingConvention.Cdecl)]
        public unsafe static CoverAccessoryStruc* getAccessoryList()
        {
-           List <CoverAccessory> coverAccessoryList = cover.getList();
-           CoverAccessory[] coverAccessories = new CoverAccessory[coverAccessoryList.Count()];
-           CoverAccessoryStruc[] coverAccessoriesStruc = new CoverAccessoryStruc[coverAccessoryList.Count()];
+      //  MessageBox.Show("1");
+        //List<CoverAccessory> coverAccessoryList = trafo.GetCover().accessoryList;
+ 
+            CoverAccessory[] coverAccessories = trafo.GetCover().accessoryList;//trafo.GetCover().accessoryList;//new CoverAccessory[coverAccessoryList.Count()];
+       
+      //   MessageBox.Show("2");
+        CoverAccessoryStruc[] coverAccessoriesStruc = new CoverAccessoryStruc[coverAccessories.Count()];
            int i = 0;
-           foreach (CoverAccessory a in coverAccessoryList)
+           foreach (CoverAccessory a in coverAccessories)
            {
                coverAccessories[i] = a;
-               coverAccessoriesStruc[i] = coverAccessories[i].toStruct();
+               coverAccessoriesStruc[i] = Structurize.From(coverAccessories[i]);
                i++;
            }
-           fixed (CoverAccessoryStruc* pointer = coverAccessoriesStruc) {return pointer; };
-       }
-       */
-    /*
+      //  MessageBox.Show("3");
+      
+        fixed (CoverAccessoryStruc* pointer = coverAccessoriesStruc) {return pointer; };
+       
+    }
+       
+    
        [DllExport("AccessoryCount", CallingConvention = CallingConvention.Cdecl)]
        public static int AccessoryCount()
        {
-           return cover.getList().Count();
+           return trafo.GetCover().accessoryList.Count();
        }
 
-
+    /*
        [DllExport("display", CallingConvention = CallingConvention.Cdecl)]
        public static void display()
        {
@@ -77,7 +70,8 @@ class Test
         binding.Name = "CreoWebServiceDefPortBinding";
         EndpointAddress endpoint = new EndpointAddress("http://localhost:59392/TransformerService.svc?wdsl");
         trafo = new TestGiesecke.ServiceReference1.Service1Client(binding, endpoint);
-
+        trafo.SetWorkNumber(value);
+        //MessageBox.Show("trafo created "+trafo.GetWorkNumber());
     }
 
 
@@ -101,29 +95,8 @@ class Test
         return Structurize.From(ca);//accessory.toStruct();
     }
 
-    /*
-    [DllExport("testSend", CallingConvention = CallingConvention.Cdecl)]
-    public unsafe static void testSend(CoverAccessoryStruc* input)
-    {
-        //  CoverProvision cp = (new CoverProvision(input));
-        //  MessageBox.Show("helloObject " + cp.id + " " + cp.code + " " + cp.description);
-        CoverAccessory ca = (new CoverAccessory(input));
-        MessageBox.Show("helloObject " + ca.id + " " + ca.testArray[2] + " " + ca.description + " " + ca.coverProvision.description + " " +ca.distanceToEdge )  ;
-    }
 
 
-
-    public static void test()
-    {
-
-        
-        MainWindow mainWindow = new MainWindow(newCover);
-        mainWindow.ShowDialog();
-
-        //cover.ShowDialog();
-        //mainWindow.ShowDialog();
-    }
-    */
 
     [DllExport("testWS", CallingConvention = CallingConvention.Cdecl)]
     public unsafe static void testWS()

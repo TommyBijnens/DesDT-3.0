@@ -987,6 +987,12 @@ namespace TestGiesecke.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCover", ReplyAction="http://tempuri.org/IService1/GetCoverResponse")]
         System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverClass> GetCoverAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetWorkNumber", ReplyAction="http://tempuri.org/IService1/SetWorkNumberResponse")]
+        void SetWorkNumber(string input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetWorkNumber", ReplyAction="http://tempuri.org/IService1/SetWorkNumberResponse")]
+        System.Threading.Tasks.Task SetWorkNumberAsync(string input);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetWorkNumber", ReplyAction="http://tempuri.org/IService1/GetWorkNumberResponse")]
         string GetWorkNumber();
         
@@ -1047,6 +1053,14 @@ namespace TestGiesecke.ServiceReference1 {
         
         public System.Threading.Tasks.Task<TestGiesecke.ServiceReference1.CoverClass> GetCoverAsync() {
             return base.Channel.GetCoverAsync();
+        }
+        
+        public void SetWorkNumber(string input) {
+            base.Channel.SetWorkNumber(input);
+        }
+        
+        public System.Threading.Tasks.Task SetWorkNumberAsync(string input) {
+            return base.Channel.SetWorkNumberAsync(input);
         }
         
         public string GetWorkNumber() {
